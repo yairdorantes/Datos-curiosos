@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import formupost
 from .models import Dato
+import random
 # Create your views here.
 def view_dato(request):
     if request.method == 'POST':
@@ -12,6 +13,11 @@ def view_dato(request):
     form = formupost()
     return render(request,'Datos/create_data.html',{'form':form})
 
-def show_data(request):
-    datos = Dato.objects.all()
-    return render(request,'Datos/index.html',{'datos':datos})
+def sorted(request):
+    lista = []
+    datos_order = Dato.objects.all()
+    for i in datos_order:
+        lista.append(i)
+    random.shuffle(lista)
+    return render(request, 'Datos/index.html',{'shuffle_data':lista})
+    

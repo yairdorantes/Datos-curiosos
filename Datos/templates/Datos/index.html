@@ -16,9 +16,9 @@
 </head>
 
 <body>
-  
+
   <div class='container'>
-    {% for i in datos %}
+    {% for i in shuffle_data %}
     <div class="card" style="width: 18rem;margin-bottom: 10px;">
       {% if i.imagen %}
       <img class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
