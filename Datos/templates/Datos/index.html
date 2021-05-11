@@ -7,6 +7,13 @@
     <title>Curious</title>
 </head>
 <body>
-    
+    {% for i in datos %}
+    <div>{{ i.autor }}</div>
+    <div>{{ i.contenido }}</div>
+    {% if i.imagen %}
+    <div>{{ i.imagen }}</div>
+    {% endif %}
+    {% endfor %}
+
 </body>
 </html>
