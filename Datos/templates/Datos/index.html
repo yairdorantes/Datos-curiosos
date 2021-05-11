@@ -1,20 +1,36 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curious</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'Datos/css.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious</title>
+
 </head>
+
 <body>
+  
+  <div class='container'>
     {% for i in datos %}
-    <div>{{ i.autor }}</div>
-    <div>{{ i.contenido }}</div>
-    {% if i.imagen %}
-   
-    <div><img src="{{i.imagen.url}}" alt="Imagen"></div>
+    <div class="card" style="width: 18rem;margin-bottom: 10px;">
+      {% if i.imagen %}
+      <img class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
+      <div class="card-body text-center">
+        <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
+        <p class="card-text">{{ i.contenido }}</p>
+      </div>
+    </div>
+ 
     {% endif %}
     {% endfor %}
-
+  </div>
 </body>
+
 </html>

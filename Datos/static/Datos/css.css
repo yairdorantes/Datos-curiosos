@@ -1,0 +1,11 @@
+body{
+    background-image: url(../../static/Datos/img/imagen-fondo.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
