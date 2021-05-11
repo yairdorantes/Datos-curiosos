@@ -11,7 +11,8 @@
     <div>{{ i.autor }}</div>
     <div>{{ i.contenido }}</div>
     {% if i.imagen %}
-    <div>{{ i.imagen }}</div>
+   
+    <div><img src="{{i.imagen.url}}" alt="Imagen"></div>
     {% endif %}
     {% endfor %}
 

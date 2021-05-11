@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import formupost
 from .models import Dato
 # Create your views here.
 def view_dato(request):
-    form=formupost(request.POST, request.FILES)
     if request.method == 'POST':
         form = formupost(request.POST,request.FILES)
         if form.is_valid():
-            datos = form.save(commit=False)
-            dato = form.save()
+            datosf = form.save(commit=False)
+            datosf.save()
+            return redirect('show_datos')
     form = formupost()
     return render(request,'Datos/create_data.html',{'form':form})
 
