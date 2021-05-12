@@ -7,6 +7,8 @@
 
 <head>
   {% load static %}
+  <script src="../../static/Datos/js.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{% static 'Datos/css.css' %}">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +19,19 @@
 
 <body>
 
-  <div class='container'>
+  <div class="botones"  aria-label="Basic example">
+    <button onclick='column()' type="button" class="btn btn-primary"><img src="../../static/Datos/img/row.svg" alt="" style="width:30px;height:30px;"></button>
+    <button onclick="row()" type="button" class="btn btn-primary"><img src="../../static/Datos/img/grid.svg" alt="" style="width:30px;height:30px;"></button>
+  </div>
+
+  
+  <div id='container'>
     {% for i in shuffle_data %}
+    
     <div class="card" style="width: 18rem;margin-bottom: 10px;">
       {% if i.imagen %}
       <img class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
+      <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">#{{i.id}}</div>
       <div class="card-body text-center">
         <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
         <p class="card-text">{{ i.contenido }}</p>

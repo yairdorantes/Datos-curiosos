@@ -5,6 +5,7 @@ class Dato(models.Model):
     contenido = models.TextField(blank=False,max_length=370,verbose_name='Contenido')
     imagen = models.ImageField(blank=True,verbose_name='Imagen',upload_to='Datosimg')
     update = models.DateField(auto_now_add=True,verbose_name='Fecha alta')
+    allow = models.BooleanField(default=False,verbose_name='Autorizado')
     def delete(self, *args, **kwargs):
         self.imagen.delete()
         super().delete(*args, **kwargs)
@@ -13,5 +14,7 @@ class Dato(models.Model):
         verbose_name = 'Dato'
         verbose_name_plural = 'Datos'
         ordering = ['id']
+    def __str__(self):
+        return str(self.id)
 
     
