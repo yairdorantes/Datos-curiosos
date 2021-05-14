@@ -18,17 +18,24 @@
 </head>
 
 <body>
+  <form class="Buscador" action="" method="GET">
+    <input title="Bucar por id o nombre de creador" id="entrada" style="width:100px;" class="form-control rounded" type="text" placeholder="Buscar" name='buscar' value="{{request.GET.buscar}}">
+    <button style="background:transparent;"  type='submit'><img style="width: 35px;" src="../../static/Datos/img/buscar.svg" alt=""></button>
+  </form>
+  
 
   <div class="botones"  aria-label="Basic example">
     <button onclick='column()' type="button" class="btn btn-primary"><img src="../../static/Datos/img/row.svg" alt="" style="width:30px;height:30px;"></button>
+    <a href="{% url 'sorted_two' %}">
     <button onclick="row()" type="button" class="btn btn-primary"><img src="../../static/Datos/img/grid.svg" alt="" style="width:30px;height:30px;"></button>
+    </a>
   </div>
 
   
   <div id='container'>
     {% for i in shuffle_data %}
-    
-    <div class="card" style="width: 18rem;margin-bottom: 10px;">
+    {% if i.allow == True %}
+    <div class="card" style="width: 50rem;margin-bottom: 10px;">
       {% if i.imagen %}
       <img class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
       <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">#{{i.id}}</div>
@@ -37,8 +44,9 @@
         <p class="card-text">{{ i.contenido }}</p>
       </div>
     </div>
- 
     {% endif %}
+ 
+      {% endif %}
     {% endfor %}
   </div>
 </body>

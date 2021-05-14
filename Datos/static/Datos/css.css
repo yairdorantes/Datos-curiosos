@@ -31,9 +31,21 @@ body {
 }
 #row{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap; 
+    justify-content: center;
 }
-
+#row div{
+    margin: 10px;
+    flex-basis: 31.1%
+}
+.Buscador{
+    display: flex;
+    background-color: antiquewhite;
+    width:100px;
+    margin: auto;
+}
+.card{
+    flex-basis: 33.333333%
+}
 
 
