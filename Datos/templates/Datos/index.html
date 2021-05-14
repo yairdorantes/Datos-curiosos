@@ -1,4 +1,3 @@
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
@@ -19,35 +18,39 @@
 
 <body>
   <form class="Buscador" action="" method="GET">
-    <input title="Bucar por id o nombre de creador" id="entrada" style="width:100px;" class="form-control rounded" type="text" placeholder="Buscar" name='buscar' value="{{request.GET.buscar}}">
-    <button style="background:transparent;"  type='submit'><img style="width: 35px;" src="../../static/Datos/img/buscar.svg" alt=""></button>
+    <input title="Bucar por id o nombre de creador" id="entrada" style="width:100px;" type="text" placeholder="Buscar"
+      name='buscar' value="{{request.GET.buscar}}">
+    <button id="boton" type='submit'><img style="width: 17px;" src="../../static/Datos/img/lupa.svg" alt=""></button>
   </form>
-  
 
-  <div class="botones"  aria-label="Basic example">
-    <button onclick='column()' type="button" class="btn btn-primary"><img src="../../static/Datos/img/row.svg" alt="" style="width:30px;height:30px;"></button>
+
+  <div class="botones" aria-label="Basic example">
+    <button onclick='column()' type="button" class="btn btn-primary"><img src="../../static/Datos/img/row.svg" alt=""
+        style="width:30px;height:30px;"></button>
     <a href="{% url 'sorted_two' %}">
-    <button onclick="row()" type="button" class="btn btn-primary"><img src="../../static/Datos/img/grid.svg" alt="" style="width:30px;height:30px;"></button>
+      <button onclick="row()" type="button" class="btn btn-primary"><img src="../../static/Datos/img/grid.svg" alt=""
+          style="width:30px;height:30px;"></button>
     </a>
   </div>
 
-  
+  {% for i in shuffle_data %}
+  {% if i.allow == True %}
+  {% if i.imagen %}
   <div id='container'>
-    {% for i in shuffle_data %}
-    {% if i.allow == True %}
-    <div class="card" style="width: 50rem;margin-bottom: 10px;">
-      {% if i.imagen %}
-      <img class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
-      <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">#{{i.id}}</div>
-      <div class="card-body text-center">
-        <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
-        <p class="card-text">{{ i.contenido }}</p>
-      </div>
+    <img class="card-img-top" style="border-radius: 10px;" src="{{i.imagen.url}}" alt="Card image cap">
+    <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">
+      #{{i.id}}</div>
+    <div class="content">
+
+      <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
+      <p style="text-align:center;" class="card-text">{{ i.contenido }}</p>
+
     </div>
-    {% endif %}
- 
-      {% endif %}
-    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% endif %}
+  {% endfor %}
   </div>
 </body>
 

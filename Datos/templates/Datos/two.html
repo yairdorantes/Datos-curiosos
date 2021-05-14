@@ -39,7 +39,7 @@ integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolfl
 <div id='row'>
   {% for i in shuffle_data %}
   {% if i.allow == True %}
-  <div class="card" style="width: 10rem;margin-bottom: 10px;">
+  <div class="card" style="width: 50rem;margin-bottom: 10px;">
     {% if i.imagen %}
     <img style='width: 100%;' class="card-img-top" src="{{i.imagen.url}}" alt="Card image cap">
     <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">#{{i.id}}</div>
