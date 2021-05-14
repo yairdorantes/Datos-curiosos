@@ -51,16 +51,7 @@ body {
     margin: 10px;
 }
 
-#row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-#row div {
-    
-    flex-basis: 31.1%
-}
 
 
 
@@ -96,20 +87,23 @@ body {
     float: right;
     border: 0;
 }
-/*
+
 #row {
-    display: flex;
-    flex-direction: row;
+    
     align-items: center;
     position: relative;
     max-width: 800px;
-    margin:auto;
     margin-bottom:25px;
+    margin: 10px;
+    
     
 }
 
 
 #row .content {
+    
+
+    
     margin: auto;
     position: absolute;
     bottom: 0;
@@ -121,4 +115,14 @@ body {
     width: 100%;
     padding: 20px;
 }
-*/
+
+.flexi{
+    display: flex;
+    flex-wrap: wrap;
+
+    
+}
+.flexi div{
+    flex:  31.333333%;
+  
+}
