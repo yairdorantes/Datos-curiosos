@@ -9,9 +9,6 @@ body {
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     max-width: 800px;
     margin:auto;
@@ -23,7 +20,7 @@ body {
 #container .content {
     margin: auto;
     position: absolute;
-    bottom: 0;
+    bottom: 35%;
     background: rgb(0, 0, 0);
     /* Fallback color */
     background: rgba(0, 0, 0, 0.5);
@@ -91,38 +88,40 @@ body {
 #row {
     
     align-items: center;
-    position: relative;
-    max-width: 800px;
+    position: relative; 
     margin-bottom:25px;
-    margin: 10px;
-    
-    
+    margin: 10px;    
 }
 
 
 #row .content {
-    
-
-    
     margin: auto;
     position: absolute;
-    bottom: 0;
+ /*   bottom: 20%;*/
+    bottom: 35%;
     background: rgb(0, 0, 0);
-   
     background: rgba(0, 0, 0, 0.5);
-
     color: #f1f1f1;
     width: 100%;
     padding: 20px;
+    max-height: 500px;
 }
+
 
 .flexi{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:  wrap; 
 
-    
 }
-.flexi div{
-    flex:  31.333333%;
-  
+
+#row{
+    flex-basis: 31.333333%;
+
+
+}
+.imagen{
+   
+    height: 500px;
+    width:800px;
+    
 }

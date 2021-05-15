@@ -20,7 +20,7 @@
   <form class="Buscador" action="" method="GET">
     <input title="Bucar por id o nombre de creador" id="entrada" style="width:100px;" type="text" placeholder="Buscar"
       name='buscar' value="{{request.GET.buscar}}">
-    <button id="boton" type='submit'><img style="width: 17px;" src="../../static/Datos/img/lupa.svg" alt=""></button>
+    <button id="boton" type='submit'><img style="width: 17px;bottom: 0;" src="../../static/Datos/img/lupa.svg" alt=""></button>
   </form>
 
 
@@ -39,14 +39,14 @@
   {% if i.allow == True %}
   {% if i.imagen %}
   <div id='row'>
-    <img class="card-img-top" style="border-radius: 10px;" src="{{i.imagen.url}}" alt="Card image cap">
+
+    <img class="imagen" style="border-radius: 10px;" src="{{i.imagen.url}}" alt="Card image cap">
     <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">
       #{{i.id}}</div>
     <div class="content">
 
       <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
       <p style="text-align:center;" class="card-text">{{ i.contenido }}</p>
-
     </div>
   </div>
   {% endif %}
