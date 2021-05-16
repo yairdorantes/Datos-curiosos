@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     backdrop-filter: blur(3px);
+    font-family: 'Roboto', sans-serif;
 }
 
 #container {
@@ -85,27 +86,7 @@ body {
     border: 0;
 }
 
-#row {
-    
-    align-items: center;
-    position: relative; 
-    margin-bottom:25px;
-    margin: 10px;    
-}
 
-
-#row .content {
-    margin: auto;
-    position: absolute;
- /*   bottom: 20%;*/
-    bottom: 35%;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-    max-height: 500px;
-}
 
 
 .flexi{
@@ -113,15 +94,8 @@ body {
     flex-wrap:  wrap; 
 
 }
-
-#row{
+.flexi .w3-container{
     flex-basis: 31.333333%;
-
-
-}
-.imagen{
    
-    height: 500px;
-    width:800px;
     
 }

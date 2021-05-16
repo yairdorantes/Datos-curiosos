@@ -20,7 +20,8 @@
   <form class="Buscador" action="" method="GET">
     <input title="Bucar por id o nombre de creador" id="entrada" style="width:100px;" type="text" placeholder="Buscar"
       name='buscar' value="{{request.GET.buscar}}">
-    <button id="boton" type='submit'><img style="width: 17px;bottom: 0;" src="../../static/Datos/img/lupa.svg" alt=""></button>
+    <button id="boton" type='submit'><img style="width: 17px;bottom: 0;" src="../../static/Datos/img/lupa.svg"
+        alt=""></button>
   </form>
 
 
@@ -34,27 +35,31 @@
           style="width:30px;height:30px;"></button>
     </a>
   </div>
-<div class="flexi">
-  {% for i in shuffle_data %}
-  {% if i.allow == True %}
-  {% if i.imagen %}
-  <div id='row'>
+  <div class="flexi">
+    {% for i in shuffle_data %}
+    {% if i.allow == True %}
+    <div class="w3-container" style="margin: 10px;">
 
-    <img class="imagen" style="border-radius: 10px;" src="{{i.imagen.url}}" alt="Card image cap">
-    <div class="w3-display-topleft w3-container" style="color: white;font-family: 'Itim', cursive;font-size:1.4em">
-      #{{i.id}}</div>
-    <div class="content">
-
-      <h5 class="card-title justify-content-center">{{ i.autor }}</h5>
-      <p style="text-align:center;" class="card-text">{{ i.contenido }}</p>
+      <div class="w3-card-2" style="width:100%;border-style: groove;border-radius:8px;">
+        <div class="otro-container" style="position: relative;">
+          <img src="{{i.imagen.url}}" alt="Alps" style="width:100%;border-radius:8px;">
+          <div class="w3-display-topleft w3-container" style="color: white" ><h6 style='font-weight: bold;'>#{{i.id}}</h6></div>
+        </div>
+        <div class="w3-container w3-center" style='background-color: rgba(31, 23, 23, 0.822);color:wheat;'>
+         
+          <h6 style='float:left;'>By: {{i.autor}}</h6>
+          <br>
+          <br>
+          <p style='text-align:center;'>{{i.contenido}}</p>
+        </div>
+      </div>
     </div>
-  </div>
-  {% endif %}
+    {% endif %}
 
-  {% endif %}
-  {% endfor %}
+  
+    {% endfor %}
   </div>
-</div>
+  </div>
 </body>
 
 </html>
